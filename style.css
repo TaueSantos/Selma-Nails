@@ -1,8 +1,3 @@
-/* Ajuste das seções para compensar header fixo */
-#home, #servicos, #galeria, #sobre, #contato, #avaliacoes,
-section {
-scroll-margin-top: var(--scroll-offset);
-}
 
 
 /* corpo */
@@ -432,44 +427,53 @@ left: 15px;
 opacity: 0.3;
 }
 
-/* ================= MEDIA QUERIES ================= */
+/* ================================================= */
+/* CSS PARA DISPOSITIVOS MÓVEIS (CELULARES E TABLETS) */
+/* ================================================= */
+
 @media (max-width: 768px) {
-    /* --- CORREÇÃO 3: Ajusta o espaçamento do body para o header alto do mobile --- */
+
+    /* --- CORREÇÃO PARA ROLAGEM NO CELULAR --- */
+    :root {
+        /* Define que a rolagem deve parar 360px abaixo do topo */
+        scroll-padding-top: 360px; 
+    }
+
+    /* --- CORREÇÃO PARA LAYOUT DO CONTEÚDO NO CELULAR --- */
     body {
+        /* Empurra todo o conteúdo 360px para baixo, livrando o cabeçalho */
         padding-top: 360px; 
     }
 
-:root {
---header-height: 80px;
---scroll-offset: calc(var(--header-height) + 10px);
-}
+    /* --- Ajustes no layout do cabeçalho --- */
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px;
+    }
 
-header {
-flex-direction: column;
-align-items: center;
-height: auto;
-padding: 10px;
-}
+    header .logo {
+        height: 60px;
+        margin-bottom: 15px; /* Adiciona espaço entre o logo e o menu */
+    }
 
-header .logo {
-height: 60px;
-    margin-bottom: 15px; /* --- CORREÇÃO 4: Espaço entre o logo e o menu --- */
-}
+    /* --- Ajustes no layout do menu de navegação --- */
+    header nav {
+        width: 100%; 
+        justify-content: center; 
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px 0;
+    }
 
-header nav {
-width: 100%; /* --- CORREÇÃO 5: Faz o menu ocupar toda a largura --- */
-justify-content: center; /* --- CORREÇÃO 6: Centraliza os links do menu --- */
-flex-direction: column;
-gap: 12px;
-padding: 10px 0;
-}
+    header nav a {
+        font-size: 16px;
+    }
 
-header nav a {
-font-size: 16px;
-}
-
- .whatsapp-float img {
- width: 52px;
-  height: 52px;
- }
+    /* --- Ajuste no ícone do WhatsApp --- */
+    .whatsapp-float img {
+        width: 52px;
+        height: 52px;
+    }
 }
