@@ -12,7 +12,7 @@
 /* comportamento de rolagem suave */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 120px; 
+  scroll-padding-top: 80px; 
 }
 
 /* corpo */
