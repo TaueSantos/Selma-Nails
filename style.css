@@ -1,19 +1,17 @@
-/* ================= VARIÁVEIS E AJUSTES GLOBAIS ================= */
+/* ================= VARIÁVEIS ================= */
 :root {
-  --header-height: 100px; /* altura padrão do header no desktop */
-  --scroll-offset: calc(var(--header-height) + 10px); /* distância usada para scroll das âncoras */
+  --header-height: 100px; /* desktop */
+  --scroll-offset: var(--header-height);
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--scroll-offset);
 }
 
 /* Ajuste das seções para compensar header fixo */
-#home, #servicos, #galeria, #sobre, #contato, #avaliacoes {
+#home, #servicos, #galeria, #sobre, #contato, #avaliacoes,
+section {
   scroll-margin-top: var(--scroll-offset);
 }
 
-/* comportamento de rolagem suave */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 180px; 
-}
 
 /* corpo */
 body {
@@ -433,7 +431,6 @@ footer iframe,
 
 /* ================= MEDIA QUERIES ================= */
 @media (max-width: 768px) {
-  /* reduzimos variáveis para mobile */
   :root {
     --header-height: 80px;
     --scroll-offset: calc(var(--header-height) + 10px);
@@ -460,10 +457,8 @@ footer iframe,
     font-size: 14px;
   }
 
-  /* opcional: deixar o botão whatsapp um pouco menor no mobile (ajuda quando houver pouca área) */
   .whatsapp-float img {
     width: 52px;
     height: 52px;
   }
 }
-
