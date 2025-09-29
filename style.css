@@ -10,7 +10,10 @@
 }
 
 /* comportamento de rolagem suave */
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height); 
+}
 
 /* corpo */
 body {
@@ -18,7 +21,6 @@ body {
   background-color: #FFB6C1;
   margin: 0;
   padding: 0;
-  padding-top: calc(var(--header-height) - 10px);
   text-align: center;
   overflow-x: hidden; /* evita rolagem lateral no mobile */
 }
