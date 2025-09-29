@@ -1,4 +1,4 @@
-
+/* --- já estava no seu código --- */
 #home, #servicos, #galeria, #sobre, #contato, #avaliacoes {
   scroll-margin-top: var(--header-height); 
 }
@@ -446,4 +446,6 @@ footer iframe,
     font-size: 14px;
   }
 }
-
+section {
+  scroll-margin-top: 100px; /* ajuste conforme a altura do seu header */
+}
