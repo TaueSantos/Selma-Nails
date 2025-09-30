@@ -5,7 +5,7 @@ body {
 font-family: Arial, Helvetica, sans-serif;
 background-color: #FFB6C1;
 margin: 0;
-  
+  /* --- CORREÇÃO 1: Adiciona o espaçamento no topo para o header (Desktop) --- */
 padding-top: 110px; 
 text-align: center;
 overflow-x: hidden; /* evita rolagem lateral no mobile */
@@ -59,7 +59,7 @@ header nav a:hover {
 color: #d63384;
 }
 
-
+/* Variáveis e ajuste de rolagem */
 :root {
 --scroll-offset: 132px; /* valor aproximado da altura do header */
 scroll-behavior: smooth;
@@ -68,7 +68,7 @@ scroll-padding-top: var(--scroll-offset);
 
 
 /* ========== HERO / BANNER com imagem de fundo ========== */
-
+/* --- CORREÇÃO 2: Removi o #home daqui pois ele já é uma seção e não precisa de padding extra --- */
 .hero {
 min-height: 40vh;
 display: flex;
@@ -316,25 +316,7 @@ margin-top: 5px;
 color: #555;
 }
 
-/* ========== WhatsApp flutuante ========== */
-.whatsapp-float {
-position: fixed;
-bottom: 20px;
-right: 20px;
-z-index: 1000;
-}
 
-.whatsapp-float img {
-width: 60px;
-height: 60px;
-border-radius: 50%;
-box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-transition: transform 0.2s;
-}
-
-.whatsapp-float img:hover {
-transform: scale(1.1);
-}
 
 /* ========== Avaliações / Feedback ========== */
 #avaliacoes {
@@ -342,7 +324,7 @@ padding: 40px 16px;
 background: linear-gradient(to bottom, #fff0f5, #ffe4ec);
 text-align: center;
 margin: 40px auto;
-
+/* scroll-margin-top já definido no topo via variável */
 }
 
 #avaliacoes h2 {
@@ -433,7 +415,7 @@ opacity: 0.3;
 
 @media (max-width: 768px) {
 
-   
+    /* --- CORREÇÃO PARA ROLAGEM NO CELULAR --- */
     :root {
         /* Define que a rolagem deve parar 360px abaixo do topo */
         scroll-padding-top: 360px; 
@@ -471,10 +453,38 @@ opacity: 0.3;
         font-size: 16px;
     }
 
-    /* --- Ajuste no ícone do WhatsApp --- */
-    .whatsapp-float img {
-        width: 52px;
-        height: 52px;
-    }
+  
 }
 
+/* ======================================= */
+/* CSS OTIMIZADO PARA BOTÕES FLUTUANTES    */
+/* ======================================= */
+
+/* O container que segura e posiciona os botões */
+.floating-buttons-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; /* Empilha os botões na vertical */
+}
+
+/* ESTILO COMUM para TODOS os botões flutuantes */
+.floating-btn img {
+    width: 60px; /* Mantemos o tamanho */
+    height: auto; /* Deixamos a altura ser automática para não distorcer */
+    transition: transform 0.2s;
+    /* A mágica acontece aqui: uma sombra que se adapta ao formato do ícone */
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* EFEITO HOVER para TODOS os botões */
+.floating-btn img:hover {
+    transform: scale(1.1);
+}
+
+/* ESPAÇAMENTO (aplicado APENAS no botão do Instagram) */
+.instagram-float {
+    margin-bottom: 15px; /* Empurra o botão de baixo para criar espaço */
+}
