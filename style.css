@@ -5,7 +5,7 @@ body {
 font-family: Arial, Helvetica, sans-serif;
 background-color: #FFB6C1;
 margin: 0;
-  /* --- CORREÇÃO 1: Adiciona o espaçamento no topo para o header (Desktop) --- */
+  
 padding-top: 110px; 
 text-align: center;
 overflow-x: hidden; /* evita rolagem lateral no mobile */
@@ -59,7 +59,7 @@ header nav a:hover {
 color: #d63384;
 }
 
-/* Variáveis e ajuste de rolagem */
+
 :root {
 --scroll-offset: 132px; /* valor aproximado da altura do header */
 scroll-behavior: smooth;
@@ -68,7 +68,7 @@ scroll-padding-top: var(--scroll-offset);
 
 
 /* ========== HERO / BANNER com imagem de fundo ========== */
-/* --- CORREÇÃO 2: Removi o #home daqui pois ele já é uma seção e não precisa de padding extra --- */
+
 .hero {
 min-height: 40vh;
 display: flex;
@@ -342,7 +342,7 @@ padding: 40px 16px;
 background: linear-gradient(to bottom, #fff0f5, #ffe4ec);
 text-align: center;
 margin: 40px auto;
-/* scroll-margin-top já definido no topo via variável */
+
 }
 
 #avaliacoes h2 {
@@ -433,7 +433,7 @@ opacity: 0.3;
 
 @media (max-width: 768px) {
 
-    /* --- CORREÇÃO PARA ROLAGEM NO CELULAR --- */
+   
     :root {
         /* Define que a rolagem deve parar 360px abaixo do topo */
         scroll-padding-top: 360px; 
@@ -477,3 +477,4 @@ opacity: 0.3;
         height: 52px;
     }
 }
+
