@@ -488,3 +488,11 @@ body {
     .instagram-float {
         margin-bottom: 15px; /* Empurra o botão de baixo para criar espaço */
     }
+
+    @media (max-width: 480px) {
+        .galeria-container .item p {
+            font-size: 13px; /* 1. Diminui um pouco a fonte */
+            line-height: 1.4; /* 2. Garante um espaçamento vertical adequado entre as linhas */
+            word-wrap: break-word; /* 3. Garante a quebra correta de palavras longas */
+        }
+    }
